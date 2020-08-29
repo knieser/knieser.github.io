@@ -1,6 +1,6 @@
 body{
-	background-color:#e6ffe6;
-	font-family: Arial, sans-serif;
+	background-color:#ffffff; 
+	font-family: Cambria, Arial, sans-serif;
 }
 
 a{
@@ -61,7 +61,8 @@ a{
 }
 
 #links{
-	text-align:left;
+	text-align:center;
+	word-spacing:20px;
 	width: 200px;
 	float:left;
 	padding:0;
@@ -75,7 +76,7 @@ a{
 #footer{
 	clear:both;
 	padding: 10px;
-	background-color: #999999;
+	background-color: green;
 	color: white;
 	text-align: right;
 }
