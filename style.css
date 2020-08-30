@@ -1,6 +1,6 @@
 body{
 	background-color:#ffffff; 
-	font-family: Cambria, Arial, sans-serif;
+	font-family: Cambria, sans-serif;
 }
 
 a{
@@ -19,10 +19,12 @@ a{
 #header{
 	text-align:left;
 	padding: 10px;
+	font-family: Calibri, sans-serif;
 }
 
 #h1,h2{
 	margin:0;
+	padding:0px;
 }
 
 #content{
@@ -41,7 +43,6 @@ a{
 #nav a:link, a:visited{
 	background-color: white;
 	color: black;
-	border: 2px solid green;
 	padding: 10px 20px;
 	text-align: center;
 	text-decoration:none;
@@ -60,6 +61,13 @@ a{
 	padding:0;
 }
 
+#main a:hover, a:active{
+	color: green;
+	background-color: white;
+	text-decoration:underline;
+}
+
+
 #links{
 	text-align:center;
 	word-spacing:20px;
@@ -69,9 +77,11 @@ a{
 	line-height: 200%;
 }
 
-#links ul{
-	list-style-type:none;
+#links a:hover, a:active{
+	color: green;
+	background-color: white;
 }
+
 
 #footer{
 	clear:both;
