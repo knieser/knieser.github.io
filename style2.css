@@ -1,5 +1,5 @@
 body{
-	background-color:#ffffff;
+	background-color:#EDEBEB;
 	font-family: Cambria, sans-serif;
 }
 
@@ -16,7 +16,7 @@ a{
 }
 
 #container{
-	width:800px;
+	width:900px;
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -43,7 +43,7 @@ a{
 
 
 #nav a:link, a:visited{
-	background-color: white;
+	background-color: #EDEBEB;
 	color: black;
 	padding: 10px 20px;
 	text-align: center;
@@ -52,7 +52,7 @@ a{
 }
 
 #nav a:hover, a:active{
-	background-color: green;
+	background-color: #157C46;
 	color: white;
 }
 
@@ -61,7 +61,7 @@ a{
 }
 
 #content{
-	padding: 30px;
+	padding: 10px;
 }
 
 #main{
@@ -72,7 +72,7 @@ a{
 #footer{
 	clear:both;
 	padding: 10px;
-	background-color: green;
+	background-color: #157C46;
 	color: white;
 	text-align: right;
 }

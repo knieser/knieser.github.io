@@ -1,5 +1,5 @@
 body{
-	background-color:#ffffff; 
+	background-color:#EDEBEB;
 	font-family: Cambria, sans-serif;
 }
 
@@ -11,7 +11,7 @@ a{
 
 
 #container{
-	width:800px;
+	width:900px;
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -41,7 +41,7 @@ a{
 
 
 #nav a:link, a:visited{
-	background-color: white;
+	background-color: #EDEBEB;
 	color: black;
 	padding: 10px 20px;
 	text-align: center;
@@ -50,20 +50,20 @@ a{
 }
 
 #nav a:hover, a:active{
-	background-color: green;
+	background-color: #157C46;
 	color: white;
 }
 
 #main{
 	text-align:left;
-	width:560px;
+	width:600px;
 	float:right;
 	padding:0;
 }
 
 #main a:hover, a:active{
-	color: green;
-	background-color: white;
+	color: #157C46;
+	background-color: #EDEBEB;
 	text-decoration:underline;
 }
 
@@ -78,15 +78,15 @@ a{
 }
 
 #links a:hover, a:active{
-	color: green;
-	background-color: white;
+	color: #157C46;
+	background-color: #EDEBEB;
 }
 
 
 #footer{
 	clear:both;
 	padding: 10px;
-	background-color: green;
+	background-color: #157C46;
 	color: white;
 	text-align: right;
 }
