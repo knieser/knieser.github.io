@@ -1,12 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="description" content="Personal Website">
-		<meta name="author" content="Kenneth Nieser">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>KJN Research</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Kenneth J. Nieser. Research Projects.">
+		<meta name="author" content="Kenneth J. Nieser">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="style2.css"/>
+		<!-- LOAD THE MATHJAX LIBRARY -->
+		<!-- DOCS: https://docs.mathjax.org/en/latest/basic/mathematics.html -->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 	</head>
 	<body>
 		<div id="container">
@@ -23,7 +28,18 @@
 					<h1> Research </h1>
 					<hr/>
 					<br>
-					<p>This page is under construction.</p>
+					<h2> REM Algorithm </h2>
+					<p>To detect subsets in a data sample that are poorly described by a fitted model, we propose a robust estimation alternative to the EM algorithm, which we call REM (robust expectation-maximization algorithm).</p>
+					<p>This approach is built on replacing the likelihood function with a mixture between the likelihood function and an unknown process, represented by \(\epsilon\), which we treat as a hyperparameter:</p>
+					\[ f_{X|\theta}(x) \rightarrow \gamma f_{X|\theta}(x) + (1-\gamma)\epsilon \]
+					<!--[<a style="font-family:Calibri" href="https://github.com/knieser/REM" target="_blank">link to paper</a>]
+					[<a style="font-family:Calibri" href="https://github.com/knieser/REM" target="_blank">pdf</a>] -->
+					[<a style="font-family:Calibri" href="https://github.com/knieser/REM" target="_blank">code</a>]
+					<p>
+						<img width="290" src="REM_data_sim.png" alt="REM data simulation"/>
+						<img width="290" src="REM_EM_fit.png" alt="REM data simulation with EM fit"/>
+						<img width="290" src="REM_REM_fit.png" alt="REM data simulation with REM fit"/>
+					</p>
 				</div>
 			</div>
 			<div id="footer">

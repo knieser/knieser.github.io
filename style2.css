@@ -1,5 +1,5 @@
 body{
-	background-color:#EDEBEB;
+	background-color:white;
 	font-family: Cambria, sans-serif;
 }
 
@@ -43,7 +43,7 @@ a{
 
 
 #nav a:link, a:visited{
-	background-color: #EDEBEB;
+	background-color: white;
 	color: black;
 	padding: 10px 20px;
 	text-align: center;

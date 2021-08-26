@@ -1,12 +1,13 @@
 body{
-	background-color:#EDEBEB;
+	background-color: white;
 	font-family: Cambria, sans-serif;
+	color: black
 }
 
 a{
 	text-decoration:none;
 	color:black;
-	font-weight:bold;	
+	font-weight:bold;
 }
 
 
@@ -41,7 +42,7 @@ a{
 
 
 #nav a:link, a:visited{
-	background-color: #EDEBEB;
+	background-color: white;
 	color: black;
 	padding: 10px 20px;
 	text-align: center;
@@ -63,7 +64,7 @@ a{
 
 #main a:hover, a:active{
 	color: #157C46;
-	background-color: #EDEBEB;
+	background-color: white;
 	text-decoration:underline;
 }
 
@@ -79,7 +80,6 @@ a{
 
 #links a:hover, a:active{
 	color: #157C46;
-	background-color: #EDEBEB;
 }
 
 
