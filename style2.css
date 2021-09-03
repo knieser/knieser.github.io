@@ -38,7 +38,7 @@ a{
 	text-align:center;
 	float:right;
 	padding:10px;
-	word-spacing: 30px;
+	word-spacing:40px;
 }
 
 
@@ -67,6 +67,8 @@ a{
 
 #main{
 	text-align:left;
+	padding: 10px;
+	margin-bottom: 50px;
 }
 
 
