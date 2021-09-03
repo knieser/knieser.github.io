@@ -1,6 +1,6 @@
 body{
 	background-color: white;
-	font-family: Cambria, sans-serif;
+	font-family: Calibri, sans-serif;
 	color: black
 }
 
@@ -12,31 +12,33 @@ a{
 
 
 #container{
-	width:900px;
+	width:1000px;
 	margin-left:auto;
 	margin-right:auto;
 }
 
 #header{
 	text-align:left;
-	padding: 10px;
-	font-family: Calibri, sans-serif;
+	padding: 20px;
+	float:left;
 }
 
-#h1,h2{
+#h1,h2,h4{
 	margin:0;
 	padding:0px;
 }
 
 #content{
 	padding: 0px;
+	text-align:left;
+	float:right;
 }
 
 #nav{
 	width: 600px;
 	text-align:center;
 	float:right;
-	padding:0;
+	padding:10px;
 	word-spacing: 30px;
 }
 
@@ -53,13 +55,16 @@ a{
 #nav a:hover, a:active{
 	background-color: #157C46;
 	color: white;
+	border-radius: 10px;
 }
 
 #main{
 	text-align:left;
 	width:600px;
 	float:right;
-	padding:0;
+	margin-top:70px;
+	margin-left:35px;
+	padding:0px;
 }
 
 #main a:hover, a:active{
@@ -71,11 +76,11 @@ a{
 
 #links{
 	text-align:center;
-	word-spacing:20px;
-	width: 200px;
-	float:left;
+	word-spacing:40px;
+	width:200px;
+	float:center;
 	padding:0;
-	line-height: 200%;
+	line-height: 400%;
 }
 
 #links a:hover, a:active{

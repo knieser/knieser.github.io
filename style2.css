@@ -1,6 +1,6 @@
 body{
 	background-color:white;
-	font-family: Cambria, sans-serif;
+	font-family: Calibri, sans-serif;
 }
 
 a{
@@ -16,7 +16,7 @@ a{
 }
 
 #container{
-	width:900px;
+	width:1000px;
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -37,7 +37,7 @@ a{
 	width: 600px;
 	text-align:center;
 	float:right;
-	padding:0;
+	padding:10px;
 	word-spacing: 30px;
 }
 
@@ -54,6 +54,7 @@ a{
 #nav a:hover, a:active{
 	background-color: #157C46;
 	color: white;
+	border-radius: 10px;
 }
 
 #main a{
