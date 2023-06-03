@@ -18,8 +18,8 @@ a{
 }
 
 #header{
-	text-align:left;
-	padding: 20px;
+	text-align:center;
+	padding: 0px;
 	float:left;
 }
 
@@ -35,7 +35,7 @@ a{
 }
 
 #nav{
-	width: 600px;
+	width: 650px;
 	text-align:center;
 	float:right;
 	padding:10px;
@@ -60,11 +60,11 @@ a{
 
 #main{
 	text-align:left;
-	width:600px;
+	width:650px;
 	float:right;
-	margin-top:70px;
-	margin-left:35px;
-	margin-bottom:50px;
+	margin-top:20px;
+	margin-left:0px;
+	margin-bottom:80px;
 	padding:0px;
 }
 
@@ -78,9 +78,8 @@ a{
 #links{
 	text-align:center;
 	word-spacing:20px;
-	width:175px;
+	width:250px;
 	float:center;
-	padding:0;
 	line-height: 400%;
 }
 

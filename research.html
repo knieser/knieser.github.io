@@ -20,35 +20,62 @@
 					<a href="index.html">Home</a>
 					<a href="CV_Kenneth_Nieser.pdf" target="_blank">CV</a>
 					<a href="research.html">Research</a>
-					<!--<a href="notes.html">Notes</a>-->
 				</div>
 			</div>
 			<div id="content">
 				<div id="main">
 					<h1> Research </h1>
+					<p style="font-size: 12px; font-style: italic;">This is a personal website and does not reflect the views of the U.S. Department of Veterans Affairs.</p>
 					<hr/>
 					<br>
+					<h2>Statistical reliability of health care quality measures</h2>
+					<p>To provide useful information to patients, clinicians, and policy-makers, quantitative measures of health care quality 
+						need to be statistically reliable&mdash;that is, quality measures ideally should reflect true
+						differences in quality of care and not statistical noise. Statistical reliability is defined as the fraction of total variance in outcomes \(\sigma_Y^2\)
+						that is due to the between-provider variance \(\sigma_b^2\) as follows: </p>					
+						\[ \rho := \frac{\sigma_b^2}{\sigma_Y^2} .\]
+					<p> We are currently working on evaluating and comparing various methods for calculating reliability in the context of health care quality measures.</p>
+					<br>
+					<hr/>
+					<h2>Quantifying and reducing inequity in average treatment effect estimation</h2>
+					<p>In many health studies, some population subgroups&mdash;such as racial and ethnic minorities, older adults, 
+					and adults with less than a high school education&mdash;consistently make up a smaller proportion of the data sample compared to others. 
+					We quantified the impact this disparity has on the generalizailiby of average treatment effects. 
+					We developed a reweighting approach for adjusting sample representation in a way that
+					lowers mean-squared error of subgroup-specific effect estimation on average, which we call 
+					representation-adjusted average treatment effect (RATE) estimation. This approach is similar
+					to a Bayesian shrinkage estimator which enables subgroups to borrow information from other subgroups, which reduces statistical noise at the expense
+					of some bias.</p>
+
+					<p>This manuscript is currently under review. Code for the simulations and the RATE estimator are available here: [<a style="font-family:Calibri" href="https://github.com/knieser/RATE" target="_blank">code</a>]
+					</p>
+					<br>
+					<hr/>
 					<h2> Detecting disparities in model fit with the REM algorithm </h2>
-					<p>To detect subsets in a data sample that are poorly described by a fitted model, we propose a robust estimation alternative to the EM algorithm, which we call REM (robust expectation-maximization algorithm).</p>
+					<p>Models do not necessarily describe all individuals equally well. 
+					To detect subsets in a data sample that are poorly described by a fitted model, 
+					we proposed a robust estimation alternative to the EM algorithm (commonly used in latent variable model estimation), 
+					which we call REM (robust expectation-maximization algorithm) [<a style="font-family:Calibri" href="https://doi.org/10.1037/met0000413" target="_blank">paper</a>]
+					[<a style="font-family:Calibri" href="https://github.com/knieser/REM" target="_blank">code</a>].</p>
 					<p>This approach is built on replacing the likelihood function with a mixture between the likelihood function and an unknown process, represented by \(\epsilon\), which we treat as a hyperparameter:</p>
 					\[ f_{X|\theta}(x) \rightarrow \gamma f_{X|\theta}(x) + (1-\gamma)\epsilon \]
-					[<a style="font-family:Calibri" href="https://doi.org/10.1037/met0000413" target="_blank">paper</a>]
-					[<a style="font-family:Calibri" href="https://github.com/knieser/REM" target="_blank">code</a>]
 					<p>
 						<img width="290" src="REM_data_sim.png" alt="REM data simulation"/>
 						<img width="290" src="REM_EM_fit.png" alt="REM data simulation with EM fit"/>
 						<img width="290" src="REM_REM_fit.png" alt="REM data simulation with REM fit"/>
 					</p>
+					<h4>Application: Postpartum depressive symptoms</h4>
+					<p> We applied this method to postpartum depressive symptom data to detect and 
+						describe differential depressive symptom patterns and examine associations with demographics and psychiatric histories [<a style="font-family:Calibri" href="https://doi.org/10.1016/j.eclinm.2023.101830" target="_blank">paper</a>]. 
+					</p>
+					<p>	In our sample, we fit an exploratory factor analysis model and found that about 10% of our sample did not fit the model well.
+						This subset was more likely to have severe depressive symptoms, particularly regarding negative self-judgement and thoughts of self-harm.
+						This subset was also more likely to have a history of childhood trauma and/or a history of social anxiety disorder.
+						I built an <a style="font-family:Calibri" href="http://knieser.shinyapps.io/app_subgrouppredict" target="_blank">R Shiny app</a>
+						to demonstrate how information from the REM fit could be used to predict which individuals are likely to be in this subset based on self-reported depressive symptoms.
+						This information could inform the tailoring of screening and treatment stratgies for postpartum depression. 
+					</p>
 					<br>
-					<hr/>
-					<br>
-					<h2> Analyzing postpartum depressive symptom patterns</h2>
-					<p> We are currently applying the REM method (described above) to postpartum depressive symptom data to detect and describe differential depressive symptom patterns and examine associations with demographics and psychiatric histories. Our goal is to inform the tailoring of prevention, screening, and treatment stratgies for postpartum depression. </p>
-					<br>
-					<!--<hr/>
-					<br>
-					<h2> Disparities in sample representation </h2>
-					<p> xxxxx </p> -->
 				</div>
 			</div>
 			<div id="footer">

@@ -3,17 +3,18 @@ body{
 	font-family: Calibri, sans-serif;
 }
 
-a{
+#main a{
 	text-decoration:none;
 	color:black;
 	font-weight:bold;
 }
 
-#main a{
+#main a:hover{
 	text-decoration:underline;
-	color:blue;
-	font-weight:none;
+	font-weight: bold;
+	color:#157C46;
 }
+
 
 #container{
 	width:1000px;
@@ -23,7 +24,7 @@ a{
 
 #header{
 	text-align:left;
-	padding: 10px;
+	padding: 0px;
 	font-family: Calibri;
 }
 
@@ -34,7 +35,7 @@ a{
 
 
 #nav{
-	width: 600px;
+	width: 650px;
 	text-align:center;
 	float:right;
 	padding:10px;
@@ -49,6 +50,7 @@ a{
 	text-align: center;
 	text-decoration:none;
 	display: inline-block;
+	font-weight: bold;
 }
 
 #nav a:hover, a:active{
@@ -57,9 +59,6 @@ a{
 	border-radius: 10px;
 }
 
-#main a{
-	font-weight:normal;
-}
 
 #content{
 	padding: 10px;
@@ -70,7 +69,6 @@ a{
 	padding: 10px;
 	margin-bottom: 50px;
 }
-
 
 #footer{
 	clear:both;
