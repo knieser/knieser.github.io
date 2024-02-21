@@ -18,64 +18,104 @@
 			<div id="header">
 				<div id="nav">
 					<a href="index.html">Home</a>
-					<a href="CV_Kenneth_Nieser.pdf" target="_blank">CV</a>
 					<a href="research.html">Research</a>
+					<a href="CV_Kenneth_Nieser.pdf" target="_blank">CV</a>
+					<a href="https://www.ncbi.nlm.nih.gov/myncbi/kenneth.nieser.1/bibliography/public/" target="_blank">Bibliography</a>
 				</div>
 			</div>
 			<div id="content">
 				<div id="main">
-					<h1> Research </h1>
-					<p style="font-size: 12px; font-style: italic;">This is a personal website and does not reflect the views of the U.S. Department of Veterans Affairs.</p>
+					<h1 id="top"> Research </h1>
+					<a href = "#algorithmic-fairness">Algorithmic fairness</a> &nbsp &nbsp &nbsp &nbsp &nbsp
+					<a href = "#quality-measures">Health care quality measurement</a>		
 					<hr/>
-					<br>
-					<h2>Statistical reliability of health care quality measures</h2>
-					<p>To provide useful information to patients, clinicians, and policy-makers, quantitative measures of health care quality 
-						need to be statistically reliable&mdash;that is, quality measures ideally should reflect true
-						differences in quality of care and not statistical noise. Statistical reliability is defined as the fraction of total variance in outcomes \(\sigma_Y^2\)
-						that is due to the between-provider variance \(\sigma_b^2\) as follows: </p>					
-						\[ \rho := \frac{\sigma_b^2}{\sigma_Y^2} .\]
-					<p> We are currently working on evaluating and comparing various methods for calculating reliability in the context of health care quality measures.</p>
-					<br>
-					<hr/>
-					<h2>Quantifying and reducing inequity in average treatment effect estimation</h2>
-					<p>In many health studies, some population subgroups&mdash;such as racial and ethnic minorities, older adults, 
-					and adults with less than a high school education&mdash;consistently make up a smaller proportion of the data sample compared to others. 
-					We quantified the impact this disparity has on the generalizailiby of average treatment effects. 
-					We developed a reweighting approach for adjusting sample representation in a way that
-					lowers mean-squared error of subgroup-specific effect estimation on average, which we call 
-					representation-adjusted average treatment effect (RATE) estimation. This approach is similar
-					to a Bayesian shrinkage estimator which enables subgroups to borrow information from other subgroups, which reduces statistical noise at the expense
-					of some bias.</p>
+					<h2 id = "algorithmic-fairness">Algorithmic fairness</h2>
+					<p>Algorithms are used pervasively in medical decision-making. While this has many advantages (e.g. consistency, efficiency, data-driven), 
+						how do we know if algorithms are perpetuating social biases and how can we reduce unfairness?
+					</p>
+					<h3> Detecting disparities in model fit </h3>
+					<p><b>Problem: </b>	In psychiatry and clinical psychology, models are used to make sense of psychological symptom patterns to inform diagnostic categories and the development of
+					screening and measurement instruments. However, these models might not describe all individuals equally well. 
+					Models that do not generalize equally well across heterogeneous populations could perpetuate
+					social biases.</p>
+					
+					<p><b>Contributions: </b></p>
+					<ul>
+						<li><p> We proposed a robust estimation alternative to the EM algorithm (commonly used in latent variable model estimation), 
+							which we call <b>REM</b> (robust expectation-maximization algorithm), 
+							to detect subsets in a data sample that are poorly described by a fitted model. This can help researchers understand and 
+							work towards improving the generalizability of their models.</p>
 
-					<p>This manuscript is currently under review. Code for the simulations and the RATE estimator are available here: [<a style="font-family:Calibri" href="https://github.com/knieser/RATE" target="_blank">code</a>]
-					</p>
+							<p>This approach is built on replacing the likelihood function with a mixture between the likelihood function and an unknown process, represented by \(\epsilon\), which we treat as a hyperparameter:</p>
+							\[ f_{X|\theta}(x) \rightarrow \gamma f_{X|\theta}(x) + (1-\gamma)\epsilon \] </p>
+							<p>
+								<img width="290" src="REM_data_sim.png" alt="REM data simulation"/>
+								<img width="290" src="REM_EM_fit.png" alt="REM data simulation with EM fit"/>
+								<img width="290" src="REM_REM_fit.png" alt="REM data simulation with REM fit"/>
+							</p>
+							<p>In this simple 2D example, the dark blue dots in the REM plot on the right (above) denote individuals with reported symptom patterns that do not
+								neatly fit into either of the two major subgroups, shown by the ellipses. <br>
+								[<a style="font-family:Calibri" href="https://doi.org/10.1037/met0000413" target="_blank">paper</a>]
+							[<a style="font-family:Calibri" href="https://github.com/knieser/REM" target="_blank">code</a>]
+							</p>
+							
+						</li>
+						<li>				
+						<p> We applied the REM method described above to postpartum depressive symptom data to detect and 
+						describe differential depressive symptom patterns and examine associations with demographics and psychiatric histories. </p>
+						<p> In our sample, we fit an exploratory factor analysis model and found that about 10% of our sample did not fit the model well.
+						This subset was more likely to have severe depressive symptoms, particularly regarding negative self-judgement and thoughts of self-harm.
+						This subset was also more likely to have a history of childhood trauma and/or a history of social anxiety disorder. </p>
+						<p>	I built an R Shiny app to demonstrate how information from the REM fit could be used to predict which individuals are likely to be in this subset based on self-reported depressive symptoms.
+						This information could inform the tailoring of screening and treatment stratgies for postpartum depression.<br>
+						[<a style="font-family:Calibri" href="https://doi.org/10.1016/j.eclinm.2023.101830" target="_blank">paper</a>][<a style="font-family:Calibri" href="http://knieser.shinyapps.io/app_subgrouppredict" target="_blank">R Shiny app</a>]
+						</p>
+						</li>
+					</ul>
+				</p>
+					<br>
+					<h3>Estimating sample average treatment effects (SATE) in experimental and observational studies</h3>
+					<p>
+					<b>Problem: </b> In many health studies, select population subgroups&mdash;such as racial and ethnic minorities, older adults, 
+					and adults with less than a high school education&mdash;consistently make up a smaller proportion of the data sample compared to others. 
+					This has led to study findings (and consequently medical decisions) that generalize well for some sociodemographic subgroups and poorly 
+					for others. </p>
+					
+					<p><b>Contributions:</b></p>
+					<ul>
+						<li><p>We developed a statistical framework to more quantitatively understand the consequences of systemic differences 
+							in sample proportions between subgroups. We show under some assumptions that the difference in mean-squared error of 
+							SATE estimates for two subgroups is equal to the product of (1) the difference in subgroup sample proportions and (2)
+							the average squared difference between subgroup treatment effects. The formula derived in our paper could be used to
+							inform design, analysis, and interpretation of studies in heterogeneous populations. </p>
+						
+							<p>In the same paper, we developed a reweighting approach for adjusting sample representation in a way that
+							lowers mean-squared error of subgroup-specific effect estimation on average, which we call 
+							representation-adjusted average treatment effect (<b>RATE</b>) estimation. This approach is similar
+							to a Bayesian shrinkage estimator which enables each subgroup to leverage information from the full sample rather than 
+							the subgroup's own data only. This reduces statistical noise at the expense of some bias. <br> [<a style="font-family:Calibri" href="https://doi.org/10.1186/s12874-023-02104-2" target="_blank">paper</a>][<a style="font-family:Calibri" href="https://github.com/knieser/RATE" target="_blank">code</a>]
+						</p>
+						</li>
+					</ul>
 					<br>
 					<hr/>
-					<h2> Detecting disparities in model fit with the REM algorithm </h2>
-					<p>Models do not necessarily describe all individuals equally well. 
-					To detect subsets in a data sample that are poorly described by a fitted model, 
-					we proposed a robust estimation alternative to the EM algorithm (commonly used in latent variable model estimation), 
-					which we call REM (robust expectation-maximization algorithm) [<a style="font-family:Calibri" href="https://doi.org/10.1037/met0000413" target="_blank">paper</a>]
-					[<a style="font-family:Calibri" href="https://github.com/knieser/REM" target="_blank">code</a>].</p>
-					<p>This approach is built on replacing the likelihood function with a mixture between the likelihood function and an unknown process, represented by \(\epsilon\), which we treat as a hyperparameter:</p>
-					\[ f_{X|\theta}(x) \rightarrow \gamma f_{X|\theta}(x) + (1-\gamma)\epsilon \]
-					<p>
-						<img width="290" src="REM_data_sim.png" alt="REM data simulation"/>
-						<img width="290" src="REM_EM_fit.png" alt="REM data simulation with EM fit"/>
-						<img width="290" src="REM_REM_fit.png" alt="REM data simulation with REM fit"/>
+					<h2 id = "quality-measures">Health care quality measurement</h2>
+					<p>Health care quality can vary considerably across physicians and health systems. Quality measures are essential for holding health care providers
+						accountable and identifying disparities. How do we evaluate and ensure that quality measures are capturing what we want them to capture?
 					</p>
-					<h4>Application: Postpartum depressive symptoms</h4>
-					<p> We applied this method to postpartum depressive symptom data to detect and 
-						describe differential depressive symptom patterns and examine associations with demographics and psychiatric histories [<a style="font-family:Calibri" href="https://doi.org/10.1016/j.eclinm.2023.101830" target="_blank">paper</a>]. 
-					</p>
-					<p>	In our sample, we fit an exploratory factor analysis model and found that about 10% of our sample did not fit the model well.
-						This subset was more likely to have severe depressive symptoms, particularly regarding negative self-judgement and thoughts of self-harm.
-						This subset was also more likely to have a history of childhood trauma and/or a history of social anxiety disorder.
-						I built an <a style="font-family:Calibri" href="http://knieser.shinyapps.io/app_subgrouppredict" target="_blank">R Shiny app</a>
-						to demonstrate how information from the REM fit could be used to predict which individuals are likely to be in this subset based on self-reported depressive symptoms.
-						This information could inform the tailoring of screening and treatment stratgies for postpartum depression. 
-					</p>
-					<br>
+					<h3>Reliability</h3>
+					<p><b>Problem: </b> Differences in quality measures between providers might be due to an artifact of chance as opposed to true differences in 
+						quality of care. Reliability quantifies the stability of a measurement if we could somehow repeat the measurement again in another sample
+						from the sample population of patients and providers in the same time period. Reliability is one scientific criterion by which prospective
+						CMS measures are evaluated. However, there is debate among experts on how to calculate and interpret estimates of quality measure reliability.</p>
+					<p><b>Contributions:</b></p>
+					<ul>
+						<li>
+							<p>We compared various methods of calculating reliability. This work is currently under review.
+							<br>[<a style="font-family:Calibri" href="https://github.com/knieser/quality_measure_reliability" target="_blank">code</a>]</p>
+						</li>
+					</ul>
+					
 				</div>
 			</div>
 			<div id="footer">
