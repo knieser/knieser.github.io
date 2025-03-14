@@ -1,7 +1,7 @@
 body{
 	background-color: white;
-	font-family: Calibri, sans-serif;
-	color: black
+	color: black;
+	font-family: 'Palatino Linotype', serif;
 }
 
 a{
@@ -10,43 +10,46 @@ a{
 	font-weight:bold;
 }
 
-
 #container{
-	width:1000px;
+	max-width:1200px;
+	width:100%;
 	margin-left:auto;
 	margin-right:auto;
 }
 
 #header{
-	text-align:center;
-	padding:0px;
 	float:left;
+	text-align:center;
+	width:30%;
+	margin-top:4%;
+	padding:1%;
 }
 
-#h1,h2,h4{
-	margin:0;
-	padding:0px;
+#links{
+	float:left;
+	text-align:center;
+	width:100%;
+	word-spacing:400%;
+	line-height:400%;
+	padding: 2%;
 }
 
-#content{
-	padding:0px;
-	text-align:left;
-	float:right;
+#links a:hover, a:active{
+	color: #157C46;
 }
 
 #nav{
-	width:650px;
-	text-align:center;
 	float:right;
-	padding:25px;
-	word-spacing: 40px;
+	text-align:center;
+	width:60%;
+	padding:2%;
+	word-spacing:400%;
 }
-
 
 #nav a:link, a:visited{
 	background-color: white;
 	color: black;
-	padding: 10px 20px;
+	padding: 1% 5%;
 	text-align: center;
 	text-decoration:none;
 	display: inline-block;
@@ -55,43 +58,40 @@ a{
 #nav a:hover, a:active{
 	background-color: #157C46;
 	color: white;
-	border-radius: 10px;
+	border-radius:10%;
+}
+
+#content{
+	float:right;
+	text-align:left;
+	width:60%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:2%;
+	padding:2%;
 }
 
 #main{
-	text-align:left;
-	width:650px;
 	float:right;
-	margin-top:20px;
-	margin-left:0px;
-	margin-bottom:40px;
-	padding:0px;
+	text-align:left;
+	margin-top:1%;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 #main a:hover, a:active{
-	color: #157C46;
 	background-color: white;
+	color: #157C46;
 	text-decoration:underline;
 }
 
-
-#links{
-	text-align:center;
-	word-spacing:30px;
-	width:300px;
-	float:center;
-	line-height: 400%;
-}
-
-#links a:hover, a:active{
-	color: #157C46;
-}
-
-
 #footer{
+	text-align: right;
 	clear:both;
-	padding: 10px;
+	margin-left:auto;
+	margin-right:auto;
+	width: 95%;
+	padding: 1%;
 	background-color: #157C46;
 	color: white;
-	text-align: right;
 }
