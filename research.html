@@ -26,99 +26,28 @@
 			<div id="content">
 				<div id="main">
 					<h1 id="top"> Research </h1>
-					<a href = "#algorithmic-fairness">Algorithmic fairness</a> &nbsp &nbsp &nbsp &nbsp &nbsp
-					<a href = "#quality-measures">Health care quality measurement</a> &nbsp &nbsp &nbsp &nbsp &nbsp		
-					<a href = "#colorectal-cancer">Colorectal cancer</a>		
-					<hr/>
-					<h2 id = "algorithmic-fairness">Algorithmic fairness</h2>
-					<p>Algorithms are used pervasively in medical decision-making. While this has many advantages (e.g. consistency, efficiency, data-driven), 
-						how do we know if algorithms are perpetuating social biases and how can we reduce unfairness?
-					</p>
-					<h3> Detecting disparities in model fit </h3>
-					<p><b>Problem: </b>	In psychiatry and clinical psychology, models are used to make sense of psychological symptom patterns to inform diagnostic categories and the development of
-					screening and measurement instruments. However, these models might not describe all individuals equally well. 
-					Models that do not generalize equally well across heterogeneous populations could perpetuate
-					social biases.</p>
-					
-					<p><b>Contributions: </b></p>
-					<ul>
-						<li><p> We proposed a robust estimation alternative to the EM algorithm (commonly used in latent variable model estimation), 
-							which we call <b>REM</b> (robust expectation-maximization algorithm), 
-							to detect subsets in a data sample that are poorly described by a fitted model. This can help researchers understand and 
-							work towards improving the generalizability of their models.</p>
-
-							<p>This approach is built on replacing the likelihood function with a mixture between the likelihood function and an unknown process, represented by \(\epsilon\), which we treat as a hyperparameter:</p>
-							\[ f_{X|\theta}(x) \rightarrow \gamma f_{X|\theta}(x) + (1-\gamma)\epsilon \] </p>
-							<p>
-								<img width="290" src="REM_data_sim.png" alt="REM data simulation"/>
-								<img width="290" src="REM_EM_fit.png" alt="REM data simulation with EM fit"/>
-								<img width="290" src="REM_REM_fit.png" alt="REM data simulation with REM fit"/>
-							</p>
-							<p>In this simple 2D example, the dark blue dots in the REM plot on the right (above) denote individuals with reported symptom patterns that do not
-								neatly fit into either of the two major subgroups, shown by the ellipses. <br>
-								[<a style="font-family:Calibri" href="https://doi.org/10.1037/met0000413" target="_blank">REM methods paper</a>]
-							[<a style="font-family:Calibri" href="https://github.com/knieser/REM" target="_blank">code</a>]
-							</p>
-							
-						</li>
-						<li>				
-						<p> We applied the REM method described above to postpartum depressive symptom data to detect and 
-						describe differential depressive symptom patterns and examine associations with demographics and psychiatric histories. </p>
-						<p> In our sample, we fit an exploratory factor analysis model and found that about 10% of our sample did not fit the model well.
-						This subset was more likely to have severe depressive symptoms, particularly regarding negative self-judgement and thoughts of self-harm.
-						This subset was also more likely to have a history of childhood trauma and/or a history of social anxiety disorder. </p>
-						<p>	I built an R Shiny app to demonstrate how information from the REM fit could be used to predict which individuals are likely to be in this subset based on self-reported depressive symptoms.
-						This information could inform the tailoring of screening and treatment stratgies for postpartum depression.<br>
-						[<a style="font-family:Calibri" href="https://doi.org/10.1016/j.eclinm.2023.101830" target="_blank">postpartum depression application paper</a>][<a style="font-family:Calibri" href="http://knieser.shinyapps.io/app_subgrouppredict" target="_blank">R Shiny app</a>]
-						</p>
-						</li>
-					</ul>
-				</p>
-					<br>
-					<h3>Estimating sample average treatment effects (SATE) in experimental and observational studies</h3>
-					<p>
-					<b>Problem: </b> In many health studies, select population subgroups&mdash;such as racial and ethnic minorities, older adults, 
-					and adults with less than a high school education&mdash;consistently make up a smaller proportion of the data sample compared to others. 
-					This has led to study findings (and consequently medical decisions) that generalize well for some sociodemographic subgroups and poorly 
-					for others. </p>
-					<p>
-						<img width="500" src="sampling_diagram.png" alt="Diagram of two ways of generalizing: out-of-sample and within-sample" class="center"/>
-					</p>
-
-					<p><b>Contributions:</b></p>
-						<ul>
-						<li>
-							<p>We developed a statistical framework to more quantitatively understand the consequences of systemic differences 
-							in sample proportions between subgroups. We show under some assumptions that the difference in mean-squared error of 
-							SATE estimates for two subgroups is equal to the product of (1) the difference in subgroup sample proportions and (2)
-							the average squared difference between subgroup treatment effects. The formula derived in our paper could be used to
-							inform design, analysis, and interpretation of studies in heterogeneous populations. </p>
-						
-							<p>In the same paper, we developed a reweighting approach for adjusting sample representation in a way that
-							lowers mean-squared error of subgroup-specific effect estimation on average, which we call 
-							representation-adjusted average treatment effect (<b>RATE</b>) estimation. This approach is similar
-							to a Bayesian shrinkage estimator which enables each subgroup to leverage information from the full sample rather than 
-							the subgroup's own data only. This reduces statistical noise at the expense of some bias. <br> [<a style="font-family:Calibri" href="https://doi.org/10.1186/s12874-023-02104-2" target="_blank">RATE paper</a>][<a style="font-family:Calibri" href="https://github.com/knieser/RATE" target="_blank">code</a>]
-						</p>
-						</li>
-					</ul>
+					<a href = "#quality-measures">Reliability of health care quality measures</a><br>	
+					<a href = "#disparities">Disparities in health care quality and intervention effectiveness</a><br>
+					<a href = "#algorithmic-fairness">Algorithmic fairness</a><br>
 					<br>
 					<hr/>
-					<h2 id = "quality-measures">Health care quality measurement</h2>
-					<p>Health care quality can vary considerably across physicians and health systems. Quality measures are essential for holding health care providers
-						accountable and identifying disparities. How do we evaluate and ensure that quality measures are capturing what we want them to capture?
-					</p>
-					<h3>Reliability</h3>
-					<p><b>Problem: </b> Differences in quality measures between providers might be due to an artifact of chance as opposed to true differences in 
+					<h2 id = "quality-measures">Reliability of health care quality measures</h2>
+					<p> Health care quality can vary considerably across providers and health systems. Differences in quality measures between providers might be due to an artifact of chance as opposed to true differences in 
 						quality of care. Reliability quantifies the stability of a measurement if we could somehow repeat the measurement again in another sample
 						from the sample population of patients and providers in the same time period. Reliability is one scientific criterion by which prospective
-						CMS measures are evaluated. However, there is debate among experts on how to calculate and interpret estimates of quality measure reliability.</p>
-					<p><b>Contributions:</b></p>
+						CMS measures are evaluated.</p>
+					<p><u>Relevant publications:</u><br>
+					<ul>
+						<li><b>Nieser KJ</b>, Harris AHS. Comparing methods for assessing the reliability of health care quality measures. Stat Med. 2024 Oct 15;43(23):4575-4594. <a style="font-family:Calibri" href="https://doi.org/10.1002/sim.10197" target="_blank">doi: 10.1002/sim.10197</a>. [<a style="font-family:Calibri" href="https://github.com/knieser/quality_measure_reliability" target="_blank">GitHub code</a>]</li>
+						<li><b>Nieser KJ</b>, Harris AHS. Split-sample reliability estimation in health care quality measurement: Once is not enough. Health Serv Res. 2024 Aug;59(4):e14310. <a style="font-family:Calibri" href="https://doi.org/10.1111/1475-6773.14310" target="_blank">doi: 10.1111/1475-6773.14310</a>.</li>
+					</ul>
+					</p>
+					<p><u>Summary:</u></p>
 					<ul>
 						<li>
 							<p>We conducted simulation studies of the split-sample method for estimating reliability
 								and found that estimates can be very sensitive to the random split of the data in low sample size and low performance variability settings.
-								We show that averaging many split-sample estimates can reduce the variability of the split-sample estimate of reliability. [<a style="font-family:Calibri" href="https://doi.org/10.1111/1475-6773.14310" target="_blank">split-sample paper</a>]
+								We show that averaging many split-sample estimates can reduce the variability of the split-sample estimate of reliability. 
 							</p>
 							<p>
 								<img width="500" src="SSR_methods_figure.png" alt="Three different methods for estimating reliability with resampling" />
@@ -127,8 +56,7 @@
 						</li>
 						<li>
 							We reviewed various methods for estimating reliability of health care quality measures and compared estimates in the case of two mental health quality measure sets. 
-							We found that estimates can differ substantially, especially when sample sizes are small. More work is needed to understand which methods should be preferred in which situations. [<a style="font-family:Calibri" href="https://doi.org/10.1002/sim.10197" target="_blank">comparing methods paper</a>]
-							    [<a style="font-family:Calibri" href="https://github.com/knieser/quality_measure_reliability" target="_blank">code</a>]
+							We found that estimates can differ substantially, especially when sample sizes are small. More work is needed to understand which methods should be preferred in which situations.
 							<p>
 								<img width="900" src="comparing_reliability_estimates.png" alt="Estimates from 14 different reliability estimation methods across varying sample sizes." class="center"/>
 							</p>
@@ -136,17 +64,78 @@
 					</ul>
 					<br>
 					<hr/>
-					<h2 id = "colorectal-cancer">Colorectal cancer</h2>
-					<p>
-						Colorectal cancer (CRC) is one of the most commonly diagnosed cancers and one of the most common causes of cancer-related death in the U.S.
-						While CRC incidence has declined over the last few decades, largely attributed to the adoption of screening and changes in health-related behaviors,
-						incidence has been rising among adults under the age of 50. 
-						CRC is now the leading cause of cancer death for men and the second leading cause of cancer death for women under age 50. 
-						Stark racial and ethnic disparities exist in CRC mortality rates with American Indian, Alaska Native, and Black/African American adults having
-						higher rates than other subgroups. What is driving these trends and what policies and interventions will be most effective at addressing them?
+					<h2 id = "disparities">Disparities in health care quality and intervention effectiveness</h2>
+					<p></p>
+					<p><u>Relevant publications:</u><br>
+						<ul>
+							<li><b>Nieser KJ</b>, Harris AHS, Binswanger IA, Clark SC, Finlay AK. Legal-involved veterans are less likely to receive guideline-concordant colorectal cancer screening. BMC Health Serv Res. 2025 Mar 4;25(1):333. <a style="font-family:Calibri" href="https://doi.org/10.1186/s12913-025-12490-6" target="_blank">doi: 10.1186/s12913-025-12490-6</a>.</li>
+							<li>Harris AHS, Eddington H, Shah VB, Shwartz M, Gurewich D, Rosen AK, Quinteros B, Wilcher B, <b>Nieser KJ</b>, Jones G, Wu JT, Morris AM. Statistical Methods to Examine Racial and Ethnic Disparities in the Surgical Literature: A Review and Recommendations for Improvement. Ann Surg. 2024 Dec 1;280(6):960-965. <a style="font-family:Calibri" href="https://doi.org/10.1097/SLA.0000000000006440" target="_blank">doi: 10.1097/SLA.0000000000006440</a>.</li>
+							<li>Harris AHS, Liu P, Breland JY, <b>Nieser KJ</b>, Schmidt EM. Differences across race and ethnicity in the quality of antidepressant medication management. Health Serv Res. 2024 Oct;59(5):e14347. <a style="font-family:Calibri" href="https://doi.org/10.1111/1475-6773.14347" target="_blank">doi: 10.1111/1475-6773.14347</a>.</li>
+							<li>Green RK, <b>Nieser KJ</b>, Jacobsohn GC, Cochran AL, Caprio TV, Cushman JT, Kind AJH, Lohmeier M, Shah MN. Differential Effects of an Emergency Department-to-Home Care Transitions Intervention in an Older Adult Population: A Latent Class Analysis. Med Care. 2023 Jun 1;61(6):400-408. <a style="font-family:Calibri" href="https://doi.org/10.1097/MLR.0000000000001848" target="_blank">doi: 10.1097/MLR.0000000000001848</a>.</li>
+						</ul>
+						</p>
+						<!--<p><u>Summary:</u></p>-->
+					<br>
+					<hr/>
+					<h2 id = "algorithmic-fairness">Algorithmic fairness</h2>
+					<p>Algorithms are used pervasively in clinical decision-making. While this has many advantages (e.g. consistency, efficiency, data-driven), 
+						how do we know if algorithms are perpetuating social biases and how can we reduce unfairness?
 					</p>
-					<h3>Sociodemographic disparities in screening</h3>
-					<p>In progress.</p>		
+					<p><u>Relevant publications:</u><br>
+						<ul>
+							<li><b>Nieser KJ</b>, Cochran AL. Quantifying and reducing inequity in average treatment effect estimation. BMC Med Res Methodol. 2023 Dec 15;23(1):297. <a style="font-family:Calibri" href="https://doi.org/10.1186/s12874-023-02104-2" target="_blank">doi: 10.1186/s12874-023-02104-2</a>.</li>
+							<li><b>Nieser KJ</b>, Stowe ZN, Newport DJ, Coker JL, Cochran AL. Detection of differential depressive symptom patterns in a cohort of perinatal women: an exploratory factor analysis using a robust statistics approach. EClinicalMedicine. 2023 Mar;57:101830. <a style="font-family:Calibri" href="https://doi.org/10.1016/j.eclinm.2023.101830" target="_blank">doi: 10.1016/j.eclinm.2023.101830</a>. [<a style="font-family:Calibri" href="http://knieser.shinyapps.io/app_subgrouppredict" target="_blank">R Shiny app</a>]</li>
+							<li><b>Nieser KJ</b>, Cochran AL. Addressing heterogeneous populations in latent variable settings through robust estimation. Psychol Methods. 2023 Feb;28(1):39-60. <a style="font-family:Calibri" href="https://doi.org/10.1037/met0000413" target="_blank">doi: 10.1037/met0000413</a>. [<a style="font-family:Calibri" href="https://github.com/knieser/REM" target="_blank">GitHub code</a>]</li> 
+						</ul>
+						</p>
+						<p><u>Summary:</u></p>
+						<ul> 
+							<li> <p>In many health studies, select population subgroups&mdash;such as racial and ethnic minorities, older adults, 
+								and adults with less than a high school education&mdash;consistently make up a smaller proportion of the data sample compared to others. 
+								This has led to study findings (and consequently medical decisions) that generalize well for some sociodemographic subgroups and poorly 
+								for others. </p>
+								<p>
+									<img width="500" src="sampling_diagram.png" alt="Diagram of two ways of generalizing: out-of-sample and within-sample" class="center"/>
+								</p>
+								<p>We showed under some assumptions that the difference in mean-squared error of 
+								sample average treatment effect estimates for two subgroups is equal to the product of (1) the difference in subgroup sample proportions and (2)
+								the average squared difference between subgroup treatment effects. The formula derived in our paper could be used to
+								inform design, analysis, and interpretation of studies in heterogeneous populations.</p>
+								<p>We developed a reweighting approach for adjusting sample representation in a way that
+								lowers mean-squared error of subgroup-specific effect estimation on average, which we call 
+								representation-adjusted average treatment effect (RATE) estimation. This approach enables each subgroup to leverage information from the full sample rather than 
+								the subgroup's own data only. This reduces statistical noise at the expense of some bias.
+								</p>
+							</li>
+							<li>
+								<p>In psychiatry and clinical psychology, models are used to make sense of psychological symptom patterns to inform diagnostic categories and the development of 
+								screening and measurement instruments. However, these models might not describe all individuals equally well.</p>
+								<p>We proposed a robust estimation alternative to the EM algorithm (commonly used in latent variable model estimation), 
+								which we call REM (robust expectation-maximization algorithm), 
+								to detect subsets in a data sample that are poorly described by a fitted model. This can help researchers understand and 
+								work towards improving the generalizability of their models.</p>
+
+								<p>This approach is built on replacing the likelihood function with a mixture between the likelihood function and an unknown process, represented by \(\epsilon\), which we treat as a hyperparameter:</p>
+								\[ f_{X|\theta}(x) \rightarrow \gamma f_{X|\theta}(x) + (1-\gamma)\epsilon \] </p>
+								<p>In the simple 2D example below, the dark blue dots in the REM plot on the right denote individuals with reported symptom patterns that do not
+									neatly fit into either of the two major subgroups, shown by the ellipses.
+								</p>
+								<p>
+								<img width="290" src="REM_data_sim.png" alt="REM data simulation"/>
+								<img width="290" src="REM_EM_fit.png" alt="REM data simulation with EM fit"/>
+								<img width="290" src="REM_REM_fit.png" alt="REM data simulation with REM fit"/>
+								</p>							
+							</li>
+							<li>				
+								<p> We applied the REM method described above to postpartum depressive symptom data to detect and 
+								describe differential depressive symptom patterns and examine associations with demographics and psychiatric histories. </p>
+								<p> About 10% of our sample did not fit the exploratory factor analysis model well. This subset was more likely to have severe depressive symptoms, particularly regarding negative self-judgement and thoughts of self-harm.
+								This subset was also more likely to have a history of childhood trauma and/or a history of social anxiety disorder. </p>
+								<p>	I built an R Shiny app to demonstrate how information from the REM fit could be used to predict which individuals are likely to be in this subset based on self-reported depressive symptoms.
+								This information could inform the tailoring of screening and treatment stratgies for postpartum depression.
+								</p>
+							</li>
+					</ul>
 				</div>
 			</div>
 			<div id="footer">
