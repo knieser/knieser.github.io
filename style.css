@@ -22,7 +22,7 @@ a{
 	text-align:center;
 	width:30%;
 	margin-top:4%;
-	padding:1%;
+	padding:2%;
 }
 
 #links{
@@ -31,7 +31,6 @@ a{
 	width:100%;
 	word-spacing:400%;
 	line-height:400%;
-	padding: 2%;
 }
 
 #links a:hover, a:active{
@@ -65,18 +64,15 @@ a{
 	float:right;
 	text-align:left;
 	width:60%;
+	margin-top:auto;
 	margin-left:auto;
 	margin-right:auto;
-	margin-bottom:2%;
-	padding:2%;
+	margin-bottom:auto;
+	padding:3%;
 }
 
 #main{
-	float:right;
 	text-align:left;
-	margin-top:1%;
-	margin-left:auto;
-	margin-right:auto;
 }
 
 #main a:hover, a:active{
