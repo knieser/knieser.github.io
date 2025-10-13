@@ -34,12 +34,13 @@
 					</p>
 					<hr/>
 					<h2 id = "quality-measures">Reliability of health care quality measures</h2>
-					<p> Health care quality can vary considerably across providers and health systems. Differences in quality measures between providers might be due to an artifact of chance as opposed to true differences in 
-						quality of care. Reliability quantifies the stability of a measurement if we could somehow repeat the measurement again in another sample
+					<p> Health care quality can vary considerably across providers and health systems. Differences in quality measures between providers might be due to chance rather than true differences in 
+						quality of care. Reliability quantifies the stability of a measurement if we were to somehow repeat the measurement again in another sample
 						from the sample population of patients and providers in the same time period. Reliability is a key scientific criterion by which prospective
 						measures are evaluated before they are used in CMS programs.</p>
 					<p><u>Relevant publications:</u><br>
 					<ul>
+					  <li><b>Nieser KJ</b>, Tancredi DJ, Harris AHS. The unreliability of two publicly reported outcome quality measures for characterizing health care quality within the Veterans Health Administration. Health Serv Res. 2025 Oct 01;e70050. doi: 10.1111/1475-6773.70050. <a href="https://doi.org/10.1111/1475-6773.70050" target="_blank"><i class="ai ai-doi ai-1x"></i></a> 
 						<li><b>Nieser KJ</b>, Harris AHS. Comparing methods for assessing the reliability of health care quality measures. Stat Med. 2024 Oct 15;43(23):4575-4594. doi: 10.1002/sim.10197. <a href="https://doi.org/10.1002/sim.10197" target="_blank"><i class="ai ai-doi ai-1x"></i></a> <a href="https://github.com/knieser/quality_measure_reliability" target="_blank"><i class="fab fa-github fa-1x"></i></a></li>
 						<li><b>Nieser KJ</b>, Harris AHS. Split-sample reliability estimation in health care quality measurement: Once is not enough. Health Serv Res. 2024 Aug;59(4):e14310. doi: 10.1111/1475-6773.14310. <a style="font-family:Calibri" href="https://doi.org/10.1111/1475-6773.14310" target="_blank"><i class="ai ai-doi ai-1x"></i></a></li>
 					</ul>
@@ -62,6 +63,13 @@
 							<p>
 								<img style = "max-width:80%;height:auto;" src="comparing_reliability_estimates.png" alt="Estimates from 14 different reliability estimation methods across varying sample sizes." class="center"/>
 							</p>
+						</li>
+						<li>
+							Estimation of the proportion of overall variance in an outcome that is attributable to between-entity variation 
+							is less straightforward when outcomes are binary (e.g., surgical complication occurs or not) compared with continuous, normally distributed outcomes. 
+						  A latent scale approach to hierarchical logistic regression is often employed which leads to a fixed within-entity variance: \(\pi^2 / 3\), the variance of a standard logistic distribution. 
+						  We demonstrated that this approach leads to reliability estimates that are higher than estimates from a delta method approximation or from a split-sample approach, using data from two outcome quality measures: risk-standardized
+						  complication rates following hip and/or knee arthroplasty and risk-standardized 30-day mortality rates following hospitalizations for heart attacks.
 						</li>
 					</ul>
 					<br>
